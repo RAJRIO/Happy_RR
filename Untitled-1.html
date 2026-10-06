@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Year, One More Chance ❤️</title>
+  <style>
+    :root{
+      --bg1:#fff0f5;
+      --bg2:#ffe4ec;
+      --pink:#e75480;
+      --deep:#8f2148;
+      --text:#4a2a35;
+      --white:rgba(255,255,255,.82);
+      --shadow:0 18px 50px rgba(143,33,72,.16);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, #ffffff 0 8%, transparent 30%),
+        radial-gradient(circle at 85% 20%, #ffd0df 0 5%, transparent 25%),
+        linear-gradient(135deg,var(--bg1),var(--bg2));
+      overflow-x:hidden;
+    }
+
+    .hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+    .heart{
+      position:absolute;
+      bottom:-50px;
+      font-size:24px;
+      opacity:.65;
+      animation:float 10s linear infinite;
+    }
+    .heart:nth-child(1){left:8%;animation-delay:0s}
+    .heart:nth-child(2){left:22%;animation-delay:3s;font-size:18px}
+    .heart:nth-child(3){left:45%;animation-delay:1.5s;font-size:30px}
+    .heart:nth-child(4){left:67%;animation-delay:4s;font-size:20px}
+    .heart:nth-child(5){left:88%;animation-delay:2s;font-size:28px}
+
+    @keyframes float{
+      0%{transform:translateY(0) scale(.8) rotate(0deg);opacity:0}
+      10%{opacity:.7}
+      100%{transform:translateY(-115vh) scale(1.25) rotate(20deg);opacity:0}
+    }
+
+    .wrap{position:relative;z-index:1;max-width:900px;margin:auto;padding:28px 18px 70px}
+    .hero{
+      min-height:78vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .eyebrow{
+      letter-spacing:4px;
+      text-transform:uppercase;
+      color:var(--deep);
+      font:600 13px/1.4 Arial,sans-serif;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0;
+      color:var(--deep);
+      font-size:clamp(42px,8vw,82px);
+      line-height:.98;
+    }
+    .subtitle{
+      max-width:700px;
+      margin:24px auto 0;
+      font-size:clamp(18px,3vw,25px);
+      line-height:1.6;
+    }
+    .date{
+      margin-top:22px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(255,255,255,.62);
+      font:600 13px Arial,sans-serif;
+      letter-spacing:1px;
+      color:var(--deep);
+      box-shadow:0 8px 25px rgba(143,33,72,.08);
+    }
+
+    .arrow{
+      margin-top:34px;
+      color:var(--pink);
+      font:600 14px Arial,sans-serif;
+      animation:bounce 1.7s ease-in-out infinite;
+    }
+    @keyframes bounce{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(8px)}
+    }
+
+    section{
+      background:var(--white);
+      border:1px solid rgba(255,255,255,.8);
+      backdrop-filter:blur(10px);
+      border-radius:28px;
+      padding:clamp(26px,5vw,52px);
+      box-shadow:var(--shadow);
+      margin:28px 0;
+    }
+    h2{
+      margin:0 0 18px;
+      font-size:clamp(30px,5vw,46px);
+      color:var(--deep);
+      text-align:center;
+    }
+    .center{text-align:center}
+    p{font-size:19px;line-height:1.9;margin:12px 0}
+    .quote{
+      border-left:4px solid var(--pink);
+      padding:10px 20px;
+      margin:25px 0;
+      font-size:24px;
+      font-style:italic;
+      color:#6f3048;
+    }
+
+    .memory-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:25px;
+    }
+    .memory{
+      min-height:150px;
+      border-radius:20px;
+      padding:22px 16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:linear-gradient(145deg,#fff6f9,#ffdce8);
+    }
+    .memory .icon{font-size:34px;margin-bottom:10px}
+    .memory strong{color:var(--deep);font-size:17px}
+    .memory span{margin-top:6px;font:14px/1.5 Arial,sans-serif;opacity:.8}
+
+    .sorry{
+      background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,234,241,.9));
+    }
+
+    .question{
+      text-align:center;
+      padding-top:20px;
+    }
+    .question h2{font-size:clamp(34px,6vw,56px)}
+    .question p{max-width:680px;margin:0 auto 26px}
+    .btn{
+      display:inline-block;
+      border:0;
+      padding:15px 24px;
+      border-radius:999px;
+      background:var(--pink);
+      color:#fff;
+      text-decoration:none;
+      font:700 15px Arial,sans-serif;
+      cursor:pointer;
+      box-shadow:0 10px 28px rgba(231,84,128,.25);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+    .answer{
+      display:none;
+      margin:24px auto 0;
+      padding:22px;
+      max-width:650px;
+      border-radius:22px;
+      background:#fff;
+      font-size:24px;
+      line-height:1.6;
+      color:var(--deep);
+    }
+    .answer.show{display:block;animation:appear .5s ease}
+    @keyframes appear{
+      from{opacity:0;transform:translateY(8px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    footer{
+      text-align:center;
+      font:13px Arial,sans-serif;
+      color:#8d5c6d;
+      padding:18px 0 0;
+    }
+
+    @media (max-width:680px){
+      .memory-grid{grid-template-columns:1fr}
+      section{border-radius:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" aria-hidden="true">
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+  </div>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="eyebrow">To the person who means so much to me</div>
+      <h1>One Year of Us ❤️</h1>
+      <div class="subtitle">
+        One year. So many memories. And one thing I still know for sure:
+        <strong>I care about you deeply.</strong>
+      </div>
+      <div class="date">OUR ANNIVERSARY • ALWAYS A SPECIAL DAY</div>
+      <div class="arrow">↓ scroll slowly ↓</div>
+    </div>
+
+    <section>
+      <h2>Thank You For The Memories</h2>
+      <p class="center">
+        We had happy days, silly conversations, little arguments, beautiful moments,
+        and memories that I will always carry with me.
+      </p>
+      <div class="memory-grid">
+        <div class="memory">
+          <div class="icon">🌷</div>
+          <strong>The Good Days</strong>
+          <span>The moments that made us smile.</span>
+        </div>
+        <div class="memory">
+          <div class="icon">✨</div>
+          <strong>The Little Things</strong>
+          <span>The tiny moments that meant a lot.</span>
+        </div>
+        <div class="memory">
+          <div class="icon">❤️</div>
+          <strong>The Memories</strong>
+          <span>The parts of us I never want to forget.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sorry">
+      <h2>I'm Sorry</h2>
+      <div class="quote">
+        “I cannot change what happened, but I can be honest about my mistakes
+        and try to do better.”
+      </div>
+      <p>
+        I know I may have hurt you, disappointed you, or made things harder than
+        they needed to be. For those moments, <strong>I'm truly sorry.</strong>
+      </p>
+      <p>
+        I'm not sending this to erase the past or pressure you into anything.
+        I just wanted you to know that I understand that my actions mattered,
+        your feelings mattered, and <strong>you mattered to me then and still do.</strong>
+      </p>
+    </section>
+
+    <section class="question">
+      <h2>Can We Start Again? 🌹</h2>
+      <p>
+        Maybe we cannot go back to the beginning.
+        But maybe, with honesty, patience, respect, and a little courage,
+        we can create a better chapter from here.
+      </p>
+      <button class="btn" onclick="showAnswer()">Open My Last Little Message ❤️</button>
+      <div id="answer" class="answer">
+        I don't ask you to forget everything.<br />
+        I only hope you can see that I'm sorry,<br />
+        that I still care,<br />
+        and that I'd be grateful for a chance to do things better.
+        <br /><br />
+        <strong>Happy One-Year Anniversary. RR❤️</strong>
+      </div>
+    </section>
+
+    <footer>
+      Made with love, honesty, and hope. ❤️
+    </footer>
+  </main>
+
+  <script>
+    function showAnswer(){
+      const box = document.getElementById("answer");
+      box.classList.add("show");
+      box.scrollIntoView({behavior:"smooth", block:"center"});
+    }
+  </script>
+</body>
+</html>
